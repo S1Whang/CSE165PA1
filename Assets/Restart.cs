@@ -40,14 +40,14 @@ public class Restart : MonoBehaviour {
 		newPosition = new Vector3 (0, 0, 0);
 		cyl.transform.position = new Vector3 (0, 5, -8);
 		tornado = cyl.AddComponent<Rigidbody> ();
-		tornado.mass = 5000000000000000;
+		tornado.mass = 500000000;
 	}
 	// Update is called once per frame
 	void Update () {
-		cyl.transform.Translate ((newPosition.x - cyl.transform.position.x)/ 150,
-			0.0f, (newPosition.z - cyl.transform.position.z)/ (150));
-		Camera.main.transform.position = new Vector3 ((newPosition.x-cyl.transform.position.x) / 300 + Camera.main.transform.position.x,
-			Camera.main.transform.position.y, (newPosition.z-cyl.transform.position.z) / 300 + Camera.main.transform.position.z);
+		cyl.transform.Translate ((newPosition.x)/ 150,
+			0.0f, (newPosition.z)/ (150));
+		Camera.main.transform.position = new Vector3 ((newPosition.x) / 500 + Camera.main.transform.position.x,
+			Camera.main.transform.position.y, (newPosition.z) / 500 + Camera.main.transform.position.z);
 		if (Input.GetMouseButtonDown (0)) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
